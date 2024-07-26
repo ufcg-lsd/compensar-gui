@@ -52,6 +52,7 @@ const theme = createTheme({
       color: '#e8eaf6',
     },
     fontFamily: [
+      'Montserrat',
       '-apple-system',
       'BlinkMacSystemFont',
       '"Segoe UI"',

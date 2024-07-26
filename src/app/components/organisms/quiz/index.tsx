@@ -18,7 +18,6 @@ const Quiz: FC<QuizProps> = ({ setOpen }) => {
       background: grey[100],
       padding: '16px !important',
       height: '84vh',
-      overflowY: 'scroll'
     }}>
       <QuizHeader setOpen={setOpen}/>
       <QuizList/>
