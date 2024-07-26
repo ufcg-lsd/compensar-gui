@@ -22,7 +22,6 @@ const QuestionList: FC<QuestionListProps> = ({ showBtnAdd }) => {
 
   return (
     <Container sx={{
-      overflowY: 'scroll',
       height: '84vh'
     }}>
       <List sx={{
@@ -32,7 +31,7 @@ const QuestionList: FC<QuestionListProps> = ({ showBtnAdd }) => {
       }}>
         {questions.map((question, index) =>
           <ListItem key={index} alignItems="flex-start">
-            <Question question={question} showBtnAdd={showBtnAdd}/>
+            <Question index={index} question={question} showBtnAdd={showBtnAdd}/>
           </ListItem>
         )}
       </List>
