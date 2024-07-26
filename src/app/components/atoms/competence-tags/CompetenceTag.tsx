@@ -1,11 +1,10 @@
 import { FC } from "react";
-import { Box, Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material";
 
-import { blueGrey } from '@mui/material/colors';
 import getCompetenceColor from "@app/utils/competencesColor";
 
 interface CompetenceTagProps {
-  title: string
+  title: string;
 }
 const CompetenceTag: FC<CompetenceTagProps> = ({ title }) => {
   const color = getCompetenceColor(title);
@@ -13,14 +12,22 @@ const CompetenceTag: FC<CompetenceTagProps> = ({ title }) => {
     <Box
       sx={{
         bgcolor: color,
-        width: 'max-content',
-        padding: '2px 4px',
-        borderRadius: '4px'
+        width: "max-content",
+        borderRadius: "3px",
+        padding: "5px 7px",
       }}
     >
-      <Typography sx={{ color: blueGrey[50], fontSize: '0.75rem'}}>{title}</Typography>
+      <Typography
+        sx={{
+          color: "#fff",
+          fontSize: 10,
+          textTransform: "uppercase",
+        }}
+      >
+        {title}
+      </Typography>
     </Box>
-  )
-}
+  );
+};
 
 export default CompetenceTag;
