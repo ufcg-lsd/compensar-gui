@@ -1,0 +1,161 @@
+
+ 
+ <div id = "log">
+ <!-- ========================  Home  ============================================== -->
+
+ <div class = "parallax" >
+     <div class="centered">
+         <hgroup>
+             <a><img class="col-sm-4" id="home" src="images/compensarLogo.png"></a>
+         </hgroup>
+         <h4>O Compensar é um ambiente pensado para você, profissional da educação, com o objetivo de proporcionar que o Pensamento Computacional possa ser desenvolvido de maneira interdisiplinar à disciplina de Matemática.</h4>
+         <br>
+         <br>
+         <h6>Conheça mais sobre o Compensar clicando na seta abaixo!</h6>
+         <a id="top" href="#sobre" onclick="goTo('#sobre')"> <ion-icon name="arrow-dropdown-circle"></ion-icon></a>
+     </div>
+</div>
+
+
+<!-- ======================== Competences  ==============================================
+
+<div id = "sobre" class = "presentation">
+  <h2>Explore as nove competências do Pensamento Computacional em suas questões de Matemática</h2>
+  <p >Manipule questões de Matemática que estimulam as principais competências do Pensamento Computacional.</p>
+
+  <div class = "container-fluid">
+          <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="3000">
+                  <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                  
+                      <div class="carousel-item col-md-3 active">
+                          <img class="img-fluid mx-auto d-block" src = "images/abstração.png" alt="slide 1">
+                      </div>
+                      <div class="carousel-item col-md-3">
+                          <img class="img-fluid mx-auto d-block" src = "images/algoritmos.png" alt="slide 2">
+                      </div>
+                      <div class="carousel-item col-md-3">
+                          <img class="img-fluid mx-auto d-block" src = "images/analise.png" alt="slide 3">
+                      </div>
+                      <div class="carousel-item col-md-3">
+                          <img class="img-fluid mx-auto d-block" src = "images/automacao.png" alt="slide 4">
+                      </div>
+                      <div class="carousel-item col-md-3">
+                          <img class="img-fluid mx-auto d-block" src = "images/coleta.png" alt="slide 5">
+                      </div>
+                      <div class="carousel-item col-md-3">
+                          <img class="img-fluid mx-auto d-block" src = "images/decomposicao.png" alt="slide 6">
+                      </div>
+                      <div class="carousel-item col-md-3">
+                          <img class="img-fluid mx-auto d-block" src = "images/paralelizacao.png" alt="slide 7">
+                      </div>
+                      <div class="carousel-item col-md-3">
+                          <img class="img-fluid mx-auto d-block" src = "images/representacao.png" alt="slide 8">
+                      </div>
+                      <div class="carousel-item col-md-3">
+                              <img class="img-fluid mx-auto d-block" src = "images/simulacao.png" alt="slide 9">
+                      </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon"></span>
+                  </a>
+                  <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon"></span>
+                  </a>
+          </div>
+  
+      </div>
+
+</div>-->
+
+
+
+<!-- ======================== Create Questions  ============================================== -->
+<div id = "sobre">
+<div  id = "create-questions" ><img class="float-right" src = "images/hands-using-computer.png">
+      <h2>Criando Questões </h2>
+      <p>
+          Crie, gratuitamente, questões de Matemática que exploram o Pensamento Computacional de forma interdisciplinar. O Compensar irá lhe apresentar um feedback em relação a quais competências do Pensamento Computacional estão sendo estimuladas por sua questão.
+      </p>
+</div>
+
+
+<!-- ======================== Export Questions  ============================================== -->
+
+<div id = "export-questions"> <img class="float-left" src = "images/list-questions.png">
+  <h2 >Criando Listas de Exercícios</h2>
+  <p>
+      Selecione, gratuitamente, questões de Matemática que estimulam as mais variadas competências e os mais variados conteúdos para listas de exercícios e compartilhe-as.
+  </p>
+</div>
+</div>
+
+
+
+
+<!-- ======================== Sing-up  ============================================== -->
+
+<div id="cadastro" class="container">
+        <div id = "cabecario">
+                <h3 >Contato</h3>
+                <h6>Se você precisar de alguma informação específica, fale conosco!</h6>
+        </div>
+</div>
+
+
+<!-- ======================== Contact  ============================================== -->
+
+<div id = "contato" ng-controller="ContatoController">
+ 
+    <div class="col-md-8 ">
+    <form id = "contatoForm" class="container">
+        <div class="row" >
+                <div class="col-md-6">
+                        <div class="form-group row col-sm-12">
+                                <label><h6>Nome</h6></label>
+                                <input ng-model = "username" class="form-control"  placeholder="Digite o nome">
+                        </div>
+
+                        <div class = "form-group row col-sm-12">
+                            <label><h6>Email</h6></label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+                                </div>
+                                <input ng-model = "email" type="text" class="form-control"  placeholder="Digite o email">
+                            </div>
+                        </div>
+                        <div class="form-group row col-sm-12">
+                                <label><h6>Assunto</h6></label>
+                                <input class="form-control" placeholder="Digite o assunto" ng-model = "assunto">
+                        </div>
+                </div>
+                <div class="col-md-6">
+                        <div class="form-group row ">
+                            <label><h6>Messagem</h6></label>
+                            <textarea ng-model="message"class="form-control" rows="9" cols="10" placeholder="Mensagem" required></textarea>
+                        </div>
+                </div>      
+            </div>
+        </form>
+    </div>
+    <button  class="btn btn-primary" ng-click="sendEmail()">Enviar Mensagem</button>
+</div>
+
+<button ng-click= "topFunction()" id="backToTop" title="Go to top"> <i class="fas fa-chevron-up fa-lg "></i></button>
+
+
+<!-- ======================== Footer  ============================================== -->
+
+<div id = "parallax" >
+    <div id="footer">
+        <!--<a href="https://www.facebook.com.br"><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="https://www.instagram.com.br"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="https://www.twitter.com.br"><ion-icon name="logo-twitter"></ion-icon></a>
+        <a href="https://www.youtube.com.br"><ion-icon name="logo-youtube"></ion-icon></a>-->
+        <p>© 2018 UFCG. All Rights Reserved</p>
+    </div>
+    </div>
+
+
+
+    </div>

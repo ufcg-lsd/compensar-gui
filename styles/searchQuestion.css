@@ -1,0 +1,133 @@
+label{
+    margin-right: 5px;
+}
+
+#search-menu {
+    float:left;
+    margin-inline-start: 3%;
+    padding:15px 15px 30px ;
+  }
+
+#outros-tipos button {
+  margin-block-start: 4%;
+}
+
+#search-menu h3 {
+  margin-inline-start: 2%;
+}
+
+#buscas{
+  margin-block-start: 5%;
+}
+
+
+.bt-maisOp {
+  width: 90px;
+  margin-inline-end: 45%;
+}
+
+#opcoesAvancadas{
+  margin-block-start: 10%;
+  margin-inline-start: 4%;
+}
+
+#compSearch, #estadoSearch {
+  margin-top: 2%;
+  margin-inline-start: 4%;
+}
+
+
+
+#searchCompetencias {
+  float: left; 
+  margin-inline-end: 100%;
+}
+
+.column {
+  flex: 5%;
+  max-width: 6%;
+  padding: 0 4px;
+  margin-inline-start: 9%;
+}
+
+.columnTelaQuestoes {
+  flex: 5%;
+  max-width: 17%;
+  padding: 0 4px;
+  margin-inline-start: 11%;
+}
+
+#competenciasSearch{
+  margin-inline-start: 18%;
+}
+
+#competenciasSearchLabel {
+  margin-inline-start: 26%;
+  margin-block-start: 2%;
+}
+
+
+
+.todasOpcoes {
+  padding:15px 15px 5px ;
+}
+
+#circle-icon{
+  font-size: 25px;
+  color: rgb(0, 110, 255);
+}
+
+  #lupa-icon{
+    font-size: 15px;
+  }
+
+  div.dropdown-menu.open{
+    max-height: 500px !important;
+    overflow: hidden;
+  }
+  ul.dropdown-menu.inner{
+    max-height: 500px !important;
+    overflow-y: auto;
+  }
+
+  .conteudoSearch{
+    margin-inline-start: 24%;
+
+  }
+
+  #enunciado {
+    width: 70%;
+    margin-inline-start: 30%;
+  }
+
+  .search{
+      margin-left:5px;
+  }
+
+  .search button {
+    margin-block-start: 55%;
+  }
+
+  #sendBusca button{
+    width: 48%; 
+    margin-block-start: 2%;
+    margin-inline-end: 2%;
+  }
+
+
+  @media screen and (max-width: 580px) {
+    #buscas{
+      margin-block-start: 14%;
+    }
+
+  }
+
+  #listName {
+    padding: 0;
+  }
+
+/* ======================================= Botão competências/autor/fonte/tipo ====================== */
+
+
+
+
