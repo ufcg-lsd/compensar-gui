@@ -39,7 +39,7 @@ export const useTryLogin = ({ setSnackbar }: useTryLoginProps) => {
       if(res.ok) {
         const responseData = await res.json();
         saveSessionData(responseData?.token);
-        router.push('/home')
+        router.push('/questions')
       }
       else setSnackbar(res.status === 401 ? 'O login ou senha incorretos' : undefined);
     }

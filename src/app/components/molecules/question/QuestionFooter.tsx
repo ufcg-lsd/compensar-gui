@@ -5,12 +5,12 @@ import { Stack } from "@mui/material";
 import QuestionInfoItem from "./QuestionInfoItem";
 import CompetenceTagList from "@components/atoms/competence-tags/CompetenceTagList";
 
-const QuestionInfo: FC<
+const QuestionFooter: FC<
   Omit<
     QuestionProps,
     "_id" | "statement" | "image" | "alternatives" | "response" | "competences"
   >
-> = ({ font, year = "?", competences = [], type }) => {
+> = ({ font, year = "?", competences = [] }) => {
   return (
     <Stack
       direction="row"
@@ -22,7 +22,6 @@ const QuestionInfo: FC<
       <Stack direction="row">
         <QuestionInfoItem field="Ano" value={year} />
         <QuestionInfoItem field="Banca" value={font} />
-        <QuestionInfoItem field="Área" value={type} />
       </Stack>
 
       <CompetenceTagList competences={competences} />
@@ -30,4 +29,4 @@ const QuestionInfo: FC<
   );
 };
 
-export default QuestionInfo;
+export default QuestionFooter;

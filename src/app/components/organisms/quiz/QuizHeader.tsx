@@ -7,72 +7,99 @@ import { useHomeSessionContext } from "@contexts/HomeProvider";
 import { fetchQuiz } from "@hooks/fetchs/fetchQuiz";
 import { useFormQuiz } from "./useFormQuiz";
 
-import { Box, IconButton, InputAdornment   } from "@mui/material";
+import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
 import Input from "@components/atoms/Input";
 
-import DownloadIcon from '@mui/icons-material/Download';
-import CloseIcon from '@mui/icons-material/Close';
-import EditIcon from '@mui/icons-material/Edit';
+import DownloadIcon from "@mui/icons-material/Download";
+import CloseIcon from "@mui/icons-material/Close";
 
 interface QuizHeaderProps {
-  setOpen: Dispatch<SetStateAction<boolean>>
+  setOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 const QuizHeader: FC<QuizHeaderProps> = ({ setOpen }) => {
-  const [hasEdit, setHasEdit] = useState(false);
-  
   const { control, handleSubmit } = useFormQuiz();
   const { myQuestions, hasQuestion } = useHomeSessionContext();
-  
+
   const submitQuiz = (form: QuizForm) => {
     const quiz: Quiz = {
       title: form.title,
       questions: myQuestions,
-    }
+    };
 
-    fetchQuiz(quiz)
-  }
-  
+    fetchQuiz(quiz);
+  };
+
   return (
     <form onSubmit={handleSubmit(submitQuiz)}>
-      <Box sx={{ display: 'flex', gap: '8px' }}>
-        <Controller
-          name="title"
-          control={control}
-          render={({ field, formState: { errors } }) => (
-            <Input
-              showError={!!errors.title?.message}
-              errorMessage={errors.title?.message}
-              variant="standard"
-              fullWidth
-              disabled={!hasEdit}
-              InputProps={{
-                endAdornment: <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle edit visibility"
-                    onClick={() => setHasEdit(!hasEdit)}
-                    size="small"
-                  >
-                    {!hasEdit && <EditIcon fontSize="small" color="primary"/>}
-                  </IconButton>
-                </InputAdornment>
-              }}
-              {...field}
-              onBlur={() => setHasEdit(false)}
-            />
-          )}
-        />
-        <Box sx={{ display: 'flex' }}>
-          <IconButton type="submit" size="small" color="primary" disabled={!hasQuestion}>
-            <DownloadIcon />
-          </IconButton>
+      <Stack sx={{ gap: "30px" }}>
+        <Stack
+          direction="row"
+          sx={{
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: "22px",
+              lineHeight: "1.2em",
+              fontWeight: "semibold",
+              color: "black",
+            }}
+          >
+            Questionário
+          </Typography>
           <IconButton size="small" onClick={() => setOpen(false)}>
-            <CloseIcon fontSize="small"/>
+            <CloseIcon fontSize="small" />
           </IconButton>
-        </Box>
-      </Box>
+        </Stack>
+
+        <Stack>
+          <Typography
+            sx={{
+              textTransform: "uppercase",
+              fontSize: "20px",
+              lineHeight: "1.2em",
+              fontWeight: "bold",
+              color: "black",
+            }}
+          >
+            Nome
+          </Typography>
+          <Box sx={{ display: "flex", gap: "8px" }}>
+            <Controller
+              name="title"
+              control={control}
+              render={({ field, formState: { errors } }) => (
+                <Input
+                  showError={!!errors.title?.message}
+                  errorMessage={errors.title?.message}
+                  variant="standard"
+                  fullWidth
+                  {...field}
+                />
+              )}
+            />
+          </Box>
+        </Stack>
+
+        <Stack>
+          <Typography
+            sx={{
+              textTransform: "uppercase",
+              fontSize: "20px",
+              lineHeight: "1.2em",
+              fontWeight: "bold",
+              color: "black",
+            }}
+          >
+            Questões
+          </Typography>
+        </Stack>
+      </Stack>
     </form>
-  )
-}
+  );
+};
 
 export default QuizHeader;

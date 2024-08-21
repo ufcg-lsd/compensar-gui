@@ -12,15 +12,15 @@ type CompetencesColor =
   "pa"
 
 const competencesColor = {
-  "co": cyan[600],
-  "an": pink[600],
-  "re": lime[600],
-  "de": pink[600],
-  "ab": cyan[600],
-  "al": lime[600],
-  "au": cyan[600],
-  "si": pink[600],
-  "pa": lime[600],
+  "co": "#5671A6",
+  "an": "#F2506E",
+  "re": "#62D98B",
+  "de": "#F2506E",
+  "ab": "#5671A6",
+  "al": "#62D98B",
+  "au": "#5671A6",
+  "si": "#F2506E",
+  "pa": "#62D98B",
 }
 
 const getCompetenceColor = (nameFull: string) => {

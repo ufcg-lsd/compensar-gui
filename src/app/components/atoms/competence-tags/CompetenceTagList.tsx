@@ -17,7 +17,7 @@ const CompetenceTagList: FC<CompetenceTagListProps> = ({
       sx={{
         display: "flex",
         flexFlow: "wrap",
-        justifyContent: "center",
+        // justifyContent: "center",
       }}
     >
       {competences.length === 0 ? (

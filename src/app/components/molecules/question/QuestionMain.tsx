@@ -1,26 +1,22 @@
 import { Question as QuestionProps } from "@interfaces/question.types";
 import { FC, useState } from "react";
-import {
-  Button,
-  CardMedia,
-  FormControl,
-  FormHelperText,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { CardMedia, FormControl, Stack, Typography } from "@mui/material";
 import React from "react";
-import FormLabel from "@mui/joy/FormLabel";
-import Radio, { radioClasses } from "@mui/joy/Radio";
-import RadioGroup from "@mui/joy/RadioGroup";
-import Sheet from "@mui/joy/Sheet";
+import {
+  FormHelperText,
+  Button,
+  FormLabel,
+  RadioGroup,
+  Sheet,
+  Radio,
+} from "@mui/joy";
+import { radioClasses } from "@mui/joy/Radio";
 import { alphabet } from "@app/utils/questionUtils";
+import { CssVarsProvider, extendTheme } from "@mui/joy/styles";
 
 const QuestionMain: FC<
-  Omit<
-    QuestionProps,
-    "_id" | "title" | "font" | "year" | "type" | "competences"
-  >
-> = ({ statement, image, alternatives, response }) => {
+  Omit<QuestionProps, "_id" | "font" | "year" | "type" | "competences">
+> = ({ title, statement, image, alternatives, response }) => {
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
   const [helperText, setHelperText] = useState("Escolha uma opção");
@@ -45,106 +41,120 @@ const QuestionMain: FC<
     }
   };
 
+  const theme = extendTheme({
+    // Sua configuração de tema personalizada aqui
+  });
+
   return (
-    <form onSubmit={handleSubmit}>
-      <FormControl error={error}>
-        <FormLabel id="demo-error-radios">
-          <Typography variant="body2" color="text.secondary" paragraph>
-            {statement}
-          </Typography>
-          {image && (
-            <CardMedia
-              component="img"
-              height="300"
-              image={image}
-              alt="question image"
-            />
-          )}
-        </FormLabel>
-        <RadioGroup
-          aria-labelledby="product-size-attribute"
-          sx={{ gap: 2, mb: 2, flexWrap: "wrap", flexDirection: "row" }}
-          value={value}
-          onChange={handleRadioChange}
-        >
-          <Stack direction="column">
-            {alternatives?.map((alternative, index) => (
-              <Stack
-                key={index}
-                direction="row"
-                alignItems="center"
-                gap="15px"
-                padding="10px 0"
-                marginBottom="5px"
-              >
-                <Sheet
-                  sx={{
-                    position: "relative",
-                    width: 25,
-                    height: 25,
-                    flexShrink: 0,
-                    borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "12px",
-
-                    [`.${radioClasses.action}`]: {
-                      borderColor: "#00bcd4",
-                    },
-                    [`& .${radioClasses.label}`]: {
-                      color: "#00bcd4",
-                    },
-                    [`& .${radioClasses.checked} .${radioClasses.label}`]: {
-                      color: "white",
-                    },
-                    [`& .${radioClasses.checked} .${radioClasses.action}`]: {
-                      backgroundColor: "#00bcd4",
-                      borderColor: "#00bcd4",
-                    },
-                  }}
-                >
-                  <Radio
-                    color="neutral"
-                    overlay
-                    disableIcon
-                    value={alternative}
-                    label={
-                      <Typography sx={{ fontSize: 12 }}>
-                        {alphabet[index]}
-                      </Typography>
-                    }
-                  />
-                </Sheet>
-                <Typography sx={{ fontSize: 14 }}>{alternative}</Typography>
-              </Stack>
-            ))}
-          </Stack>
-        </RadioGroup>
-
-        <Stack direction="row" alignItems="center">
-          <Button
-            type="submit"
-            variant="outlined"
-            sx={{
-              fontSize: 14,
-              backgroundColor: "#00bcd4",
-              borderColor: "#00bcd4",
-              color: "#fff",
-              width: "fit-content",
-              padding: "0 12px",
-              height: "34px",
-              borderRadius: "3px",
-            }}
+    <CssVarsProvider theme={theme}>
+      <form onSubmit={handleSubmit}>
+        <FormControl error={error} sx={{padding:"0 30px"}}>
+          <FormLabel id="demo-error-radios">
+            <Typography
+              fontSize="22px"
+              fontWeight="bold"
+              marginBottom="0.5rem"
+              lineHeight={1.2}
+            >
+              {title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary" paragraph>
+              {statement}
+            </Typography>
+            {image && (
+              <CardMedia
+                component="img"
+                height="300"
+                image={image}
+                alt="question image"
+              />
+            )}
+          </FormLabel>
+          <RadioGroup
+            aria-labelledby="product-size-attribute"
+            sx={{ gap: 2, mb: 2, flexWrap: "wrap", flexDirection: "row" }}
+            value={value}
+            onChange={handleRadioChange}
           >
-            Responder
-          </Button>
-          <FormHelperText sx={{ margin: "0px 0px 0px 15px" }}>
-            {helperText}
-          </FormHelperText>
-        </Stack>
-      </FormControl>
-    </form>
+            <Stack direction="column">
+              {alternatives?.map((alternative, index) => (
+                <Stack
+                  key={index}
+                  direction="row"
+                  alignItems="center"
+                  gap="15px"
+                  padding="10px 0"
+                  marginBottom="5px"
+                >
+                  <Sheet
+                    sx={{
+                      position: "relative",
+                      width: 25,
+                      height: 25,
+                      flexShrink: 0,
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "12px",
+
+                      [`.${radioClasses.action}`]: {
+                        borderColor: "#5671A6",
+                      },
+                      [`& .${radioClasses.label}`]: {
+                        color: "#5671A6",
+                      },
+                      [`& .${radioClasses.checked} .${radioClasses.label}`]: {
+                        color: "white",
+                      },
+                      [`& .${radioClasses.checked} .${radioClasses.action}`]: {
+                        backgroundColor: "#5671A6",
+                        borderColor: "#5671A6",
+                      },
+                    }}
+                  >
+                    <Radio
+                      color="neutral"
+                      overlay
+                      disableIcon
+                      value={alternative}
+                      label={
+                        <Typography sx={{ fontSize: 12 }}>
+                          {alphabet[index]}
+                        </Typography>
+                      }
+                    />
+                  </Sheet>
+                  <Typography sx={{ fontSize: 14 }}>{alternative}</Typography>
+                </Stack>
+              ))}
+            </Stack>
+          </RadioGroup>
+
+          <Stack direction="row" alignItems="center">
+            <Button
+              type="submit"
+              variant="outlined"
+              sx={{
+                fontSize: 14,
+                backgroundColor: "#5671A6",
+                borderColor: "#5671A6",
+                color: "#fff",
+                width: "fit-content",
+                padding: "0 12px",
+                height: "34px",
+                borderRadius: "15px",
+              }}
+            >
+              Responder
+            </Button>
+            <FormHelperText sx={{ margin: "0px 0px 0px 15px" }}>
+              {helperText}
+            </FormHelperText>
+          </Stack>
+        </FormControl>
+      </form>
+    </CssVarsProvider>
   );
 };
 
