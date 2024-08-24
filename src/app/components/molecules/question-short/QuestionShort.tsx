@@ -1,12 +1,7 @@
 import { Question as QuestionInterface } from "@interfaces/question.types";
 import { FC } from "react";
 
-import {
-  Avatar,
-  IconButton,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Avatar, IconButton, Stack, Typography } from "@mui/material";
 
 import { useHomeSessionContext } from "@contexts/HomeProvider";
 import { Close } from "@mui/icons-material";
@@ -17,12 +12,7 @@ interface QuestionShortProps {
 }
 
 const QuestionShort: FC<QuestionShortProps> = ({ question }) => {
-  const {
-    title,
-    font,
-    year,
-    competences,
-  } = question;
+  const { title, font, year, competences } = question;
   const { removeMyQuestions } = useHomeSessionContext();
 
   const removeQuestion = () => {
@@ -51,8 +41,9 @@ const QuestionShort: FC<QuestionShortProps> = ({ question }) => {
         </Typography>
 
         <Stack direction="row" gap={0.5}>
-          {competences.map((competence) => (
+          {competences.map((competence, index) => (
             <Avatar
+              key={index}
               aria-label="recipe"
               title={competence.title}
               sx={{

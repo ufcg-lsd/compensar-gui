@@ -3,12 +3,12 @@ import { FC } from "react";
 
 import { Stack } from "@mui/material";
 import QuestionInfoItem from "./QuestionInfoItem";
-import CompetenceTagList from "@components/atoms/competence-tags/CompetenceTagList";
+import CompetenceTagList from "../../atoms/competence-tags/CompetenceTagList";
 
 const QuestionInfo: FC<
   Omit<
     QuestionProps,
-    "_id" | "statement" | "image" | "alternatives" | "response" | "competences"
+    "_id" | "statement" | "image" | "alternatives" | "response" | "title"
   >
 > = ({ font, year = "?", competences = [], type }) => {
   return (

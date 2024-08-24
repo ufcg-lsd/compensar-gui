@@ -8,13 +8,13 @@ import { fetchQuiz } from "@hooks/fetchs/fetchQuiz";
 import { useFormQuiz } from "./useFormQuiz";
 
 import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
-import Input from "@components/atoms/Input";
+import Input from "../../atoms/Input";
 
 import DownloadIcon from "@mui/icons-material/Download";
 import CloseIcon from "@mui/icons-material/Close";
 
 interface QuizHeaderProps {
-  setOpen: Dispatch<SetStateAction<boolean>>;
+  setOpen: Dispatch<SetStateAction<string>>;
 }
 
 const QuizHeader: FC<QuizHeaderProps> = ({ setOpen }) => {
@@ -48,9 +48,9 @@ const QuizHeader: FC<QuizHeaderProps> = ({ setOpen }) => {
               color: "black",
             }}
           >
-            Questionário
+            Lista de exercício
           </Typography>
-          <IconButton size="small" onClick={() => setOpen(false)}>
+          <IconButton size="small" onClick={() => setOpen("")}>
             <CloseIcon fontSize="small" />
           </IconButton>
         </Stack>

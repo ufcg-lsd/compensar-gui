@@ -4,7 +4,7 @@ import { Dispatch, FC, SetStateAction } from "react";
 import { CardHeader, Avatar, IconButton } from '@mui/material';
 
 import { FontColor } from "../../../utils/questionUtils";
-import ExpandedButton from "@components/atoms/ExpandButton";
+import ExpandedButton from "../../atoms/ExpandButton";
 
 import CloseIcon from '@mui/icons-material/Close';
 

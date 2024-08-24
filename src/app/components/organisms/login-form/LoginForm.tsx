@@ -2,13 +2,13 @@ import { FC, useState } from "react";
 import { Controller } from "react-hook-form"
 
 import { Button, InputAdornment, IconButton } from "@mui/material";
-import SnackBarCustom from "@components/atoms/SnackBar";
-import Input from "@components/atoms/Input";
+import SnackBarCustom from "../../atoms/SnackBar";
+import Input from "../../atoms/Input";
 
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
-import { AlertType } from "@components/atoms/typings";
+import { AlertType } from "../../atoms/typings";
 import { useFormLogin } from "./hooks/useFormLogin";
 import { useTryLogin } from "./hooks/useTryLogin";
 import { LoginForm as LoginFormInterface } from "./typings";
@@ -28,7 +28,7 @@ const LoginForm: FC = () => {
   }
 
   const { control, handleSubmit } = useFormLogin();
-  const { tryLogin, isPending } = useTryLogin({ setSnackbar: setShowSnackbar });
+  const { tryLogin } = useTryLogin({ setSnackbar: setShowSnackbar });
 
   const onSubmit = async (loginForm: LoginFormInterface) => tryLogin(loginForm);
 
@@ -80,7 +80,7 @@ const LoginForm: FC = () => {
       <Button
         variant="contained"
         type="submit"
-        disabled={isPending}
+        // disabled={isPending}
       >Acessar</Button>
       <SnackBarCustom
         open={openSnackbar}

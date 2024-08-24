@@ -1,8 +1,9 @@
-import LoginPage from "@components/pages/login";
+import AuthComponent from "../../app/components/AuthComponent";
+// import LoginPage from "@components/pages/login";
 
 const View = () => {
   
-  return <LoginPage />
+  return <AuthComponent />
 }
 
 export default View;

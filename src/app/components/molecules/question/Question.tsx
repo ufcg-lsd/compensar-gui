@@ -8,7 +8,7 @@ import { useHomeSessionContext } from "@contexts/HomeProvider";
 interface QuestionProps {
   index: number;
   question: QuestionInterface;
-  showBtnAdd: boolean;
+  showBtnAdd: string;
 }
 
 const Question: FC<QuestionProps> = ({ question, showBtnAdd }) => {

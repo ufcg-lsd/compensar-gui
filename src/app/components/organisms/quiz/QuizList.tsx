@@ -1,4 +1,4 @@
-import QuestionShort from "@components/molecules/question-short/QuestionShort";
+import QuestionShort from "../../molecules/question-short/QuestionShort";
 import { useHomeSessionContext } from "@contexts/HomeProvider";
 import { List, ListItem } from "@mui/material";
 

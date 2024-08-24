@@ -5,13 +5,13 @@ import { useTryCreateUserAccount } from "./hooks/useTryCreateUserAccount";
 import { useFormCreateAccount } from "./hooks/useFormCreateAccount";
 
 import { Button, InputAdornment, IconButton } from "@mui/material";
-import SnackBarCustom from "@components/atoms/SnackBar";
-import Input from "@components/atoms/Input";
+import SnackBarCustom from "../../atoms/SnackBar";
+import Input from "../../atoms/Input";
 
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
-import { AlertType } from "@components/atoms/typings";
+import { AlertType } from "../../atoms/typings";
 import { UserForm } from "@interfaces/user.types";
 
 const CreateAccountForm: FC = () => {

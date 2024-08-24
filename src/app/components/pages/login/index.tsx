@@ -1,12 +1,12 @@
 import './styles.scss';
 
 import { FC } from "react";
-import ThemeContainer from "@components/templates/ThemeContainer";
+import ThemeContainer from "../../templates/ThemeContainer";
 import { Button, Container, Typography } from "@mui/material";
 
 import { useRouter } from "next/router";
 import LoginForm from "../../organisms/login-form/LoginForm";
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { ProtectedProvider } from '@contexts/ProtectedProvider';
 
 const LoginPage: FC = () => {

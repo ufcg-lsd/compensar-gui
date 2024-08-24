@@ -5,7 +5,7 @@ import QuizList from "./QuizList";
 import { useHomeSessionContext } from "@contexts/HomeProvider";
 import { Download } from "@mui/icons-material";
 interface QuizProps {
-  setOpen: Dispatch<SetStateAction<boolean>>;
+  setOpen: Dispatch<SetStateAction<string>>;
 }
 
 const Quiz: FC<QuizProps> = ({ setOpen }) => {

@@ -1,19 +1,19 @@
 import "./styles.scss";
-import ThemeContainer from "@components/templates/ThemeContainer";
+import ThemeContainer from "../../templates/ThemeContainer";
 import { Fab, Stack, Typography } from "@mui/material";
 import { ProtectedProvider } from "@contexts/ProtectedProvider";
-import QuestionList from "@components/organisms/questions";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Quiz from "@components/organisms/quiz";
+import QuestionList from "../../organisms/questions";
+import { QueryClient, QueryClientProvider } from "react-query";
+import Quiz from "../../organisms/quiz";
 import { HomeProvider } from "@contexts/HomeProvider";
 import AddIcon from "@mui/icons-material/Add";
 import { useState } from "react";
-import Sidebar from "@components/Sidebar";
-import QuestionFilter from "@components/QuestionFilter";
+import Sidebar from "../../Sidebar";
+import QuestionFilter from "../../QuestionFilter";
 
 const HomePage = () => {
   const queryClient = new QueryClient();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState("");
 
   return (
     <ProtectedProvider>
@@ -51,7 +51,7 @@ const HomePage = () => {
                   <Fab
                     color="primary"
                     aria-label="add"
-                    onClick={() => setOpen(true)}
+                    onClick={() => setOpen("AS")}
                     sx={{
                       position: "fixed",
                       right: "20px",

@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query"
+import { useQuery } from "react-query"
 import fetchQuestions from "./fetchs/fetchQuestions";
 import { Questions } from "@interfaces/question.types";
 import { useProtectedSessionContext } from "@contexts/ProtectedProvider";

@@ -1,9 +1,9 @@
 "use client";
 import "./styles.scss";
-import Header from "./components/organisms/Header";
-import CompetencesContainer from "@components/organisms/competences";
-import AboutComputationalThinking from "@components/organisms/about-computational-thinking";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Header from "../app/components/organisms/Header";
+import CompetencesContainer from "../app/components/organisms/competences";
+import AboutComputationalThinking from "../app/components/organisms/about-computational-thinking";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 export default function Home() {
   const queryClient = new QueryClient();

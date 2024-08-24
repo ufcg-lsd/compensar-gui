@@ -6,7 +6,7 @@ import { CardContent, CardMedia } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
 import { alphabet } from "../../../utils/questionUtils";
-import CompetenceTagList from "@components/atoms/competence-tags/CompetenceTagList";
+import CompetenceTagList from "../../atoms/competence-tags/CompetenceTagList";
 
 const QuestionMain: FC<Omit<QuestionProps, '_id' | 'title' | 'font' | 'year' | 'type'>> = ({
   statement,

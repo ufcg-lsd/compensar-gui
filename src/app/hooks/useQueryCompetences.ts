@@ -1,5 +1,5 @@
 import { Competences } from "@interfaces/competence.types";
-import { useQuery } from "@tanstack/react-query"
+import { useQuery } from "react-query"
 
 const useQueryCompetences = () => {
   async function getCompetences() {

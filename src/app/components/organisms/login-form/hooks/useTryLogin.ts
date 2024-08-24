@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-import { useMutation } from "@tanstack/react-query";
+import { useMutation } from "react-query";
 import { useRouter } from "next/router";
 
 import { LoginForm } from "../typings";
